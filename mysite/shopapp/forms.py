@@ -34,5 +34,5 @@ class ProductForm(forms.ModelForm):
 
 
 # class-form for downloading file from admin-panel
-class FileImportForm(forms.Form):
+class CSVImportForm(forms.Form):
     imp_file = forms.FileField()
