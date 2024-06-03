@@ -39,19 +39,19 @@ ALLOWED_HOSTS = [
     "0.0.0.0",
 ] + getenv("DJANGO_ALLOWED_HOSTS", "").split(',')
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-    "0.0.0.0",
-]
-
-if DEBUG:
-    import socket
-
-    hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
-    INTERNAL_IPS.append("10.0.2.2")
-    INTERNAL_IPS.extend(
-        [ip[: ip.rfind(".")] + ".1" for ip in ips]
-    )
+# INTERNAL_IPS = [
+#     "127.0.0.1",
+#     "0.0.0.0",
+# ]
+#
+# if DEBUG:
+#     import socket
+#
+#     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+#     INTERNAL_IPS.append("10.0.2.2")
+#     INTERNAL_IPS.extend(
+#         [ip[: ip.rfind(".")] + ".1" for ip in ips]
+#     )
 
 # Application definition
 
@@ -63,8 +63,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
-
-    'debug_toolbar',
+    # 'debug_toolbar',
     'rest_framework',
     'django_filters',
 
